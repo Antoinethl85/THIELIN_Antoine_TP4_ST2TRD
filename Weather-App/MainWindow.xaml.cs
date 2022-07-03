@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Weather_App.Cities;
 
 namespace Weather_App
 {
@@ -27,6 +28,59 @@ namespace Weather_App
             MainGrid.Background = new SolidColorBrush(Color.FromArgb(255, 179, 182, 181));
             Title.FontSize = 30;
             Infos.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+
+            Api _api = new Api();
+            Alger _alger = new Alger();
+            Console.WriteLine(_alger);
+        }
+
+        private void displayInfos(object sender, RoutedEventArgs e)
+        {
+            Content.Text = "AACAJAIIJFAPIFAIPFAAPFIPIAF";
+            if (Selection.SelectionBoxItem == Alger)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Berlin)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Johannesburg)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == London)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == NewYork)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Oslo)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Paris)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Rio)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Sydney)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (Selection.SelectionBoxItem == Tokyo)
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            else
+            {
+                Content.Text = "You didn't choose a correct city";
+            }
         }
     }
 }

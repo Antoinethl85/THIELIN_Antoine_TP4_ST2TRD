@@ -28,18 +28,22 @@
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <ComboBox>
-                <ComboBoxItem>Alger</ComboBoxItem>
-                <ComboBoxItem>Berlin</ComboBoxItem>
-                <ComboBoxItem>Johannesburg</ComboBoxItem>
-                <ComboBoxItem>London</ComboBoxItem>
-                <ComboBoxItem>New York</ComboBoxItem>
-                <ComboBoxItem>Oslo</ComboBoxItem>
-                <ComboBoxItem>Paris</ComboBoxItem>
-                <ComboBoxItem>Rio</ComboBoxItem>
-                <ComboBoxItem>Sydney</ComboBoxItem>
-                <ComboBoxItem>Tokyo</ComboBoxItem>
+            <ComboBox Name="Selection" Cursor="Hand">
+                <ComboBoxItem Name="Alger" IsSelected="True">Alger</ComboBoxItem>
+                <ComboBoxItem Name="Berlin">Berlin</ComboBoxItem>
+                <ComboBoxItem Name="Johannesburg">Johannesburg</ComboBoxItem>
+                <ComboBoxItem Name="London">London</ComboBoxItem>
+                <ComboBoxItem Name="NewYork">New York</ComboBoxItem>
+                <ComboBoxItem Name="Oslo">Oslo</ComboBoxItem>
+                <ComboBoxItem Name="Paris">Paris</ComboBoxItem>
+                <ComboBoxItem Name="Rio">Rio</ComboBoxItem>
+                <ComboBoxItem Name="Sydney">Sydney</ComboBoxItem>
+                <ComboBoxItem Name="Tokyo">Tokyo</ComboBoxItem>
             </ComboBox>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Button Name="showInfo" Click="displayInfos" Cursor="Hand">Show informations about this city</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="4" Grid.Column="1" Name="Infos">
