@@ -29,7 +29,7 @@
         
         <StackPanel Grid.Row="2" Grid.Column="1">
             <ComboBox Name="Selection" Cursor="Hand">
-                <ComboBoxItem Name="Alger" IsSelected="True">Alger</ComboBoxItem>
+                <ComboBoxItem Name="AlgerBox" IsSelected="True">Alger</ComboBoxItem>
                 <ComboBoxItem Name="Berlin">Berlin</ComboBoxItem>
                 <ComboBoxItem Name="Johannesburg">Johannesburg</ComboBoxItem>
                 <ComboBoxItem Name="London">London</ComboBoxItem>
@@ -43,7 +43,7 @@
         </StackPanel>
         
         <StackPanel Grid.Row="3" Grid.Column="1">
-            <Button Name="showInfo" Click="displayInfos" Cursor="Hand">Show informations about this city</Button>
+            <Button Name="showInfo" Click="DisplayInfos" Cursor="Hand">Show informations about this city</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="4" Grid.Column="1" Name="Infos">

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Weather_App.API;
 using Weather_App.Cities;
 
 namespace Weather_App
@@ -28,26 +29,21 @@ namespace Weather_App
             MainGrid.Background = new SolidColorBrush(Color.FromArgb(255, 179, 182, 181));
             Title.FontSize = 30;
             Infos.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-
-            Api _api = new Api();
-            Alger _alger = new Alger();
-            Console.WriteLine(_alger);
         }
 
-        private void displayInfos(object sender, RoutedEventArgs e)
+        private void DisplayInfos(object sender, RoutedEventArgs e)
         {
-            Content.Text = "AACAJAIIJFAPIFAIPFAAPFIPIAF";
-            if (Selection.SelectionBoxItem == Alger)
+            if (Selection.Text == "Alger")
+            {
+                Content.Text = showData("Alger");
+            }
+            if (Selection.Text == "Berlin")
             {
                 Content.Text = "fzklhfzzf";
             }
-            if (Selection.SelectionBoxItem == Berlin)
+            if (Selection.SelectedValue.ToString() == Johannesburg.Content.ToString())
             {
-                Content.Text = "fzklhfzzf";
-            }
-            if (Selection.SelectionBoxItem == Johannesburg)
-            {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test 2";
             }
             if (Selection.SelectionBoxItem == London)
             {
@@ -81,6 +77,58 @@ namespace Weather_App
             {
                 Content.Text = "You didn't choose a correct city";
             }
+        }
+
+        private string showData(string city)
+        {
+            Api _api = new Api();
+            if (city == "Alger")
+            {
+                Alger _alger = new Alger();
+                Root algerInfos = _api.GetWeather(_alger.getCoordinates());
+                return algerInfos.current.sunrise.ToString();
+            }
+            if (city == "Berlin")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == Johannesburg.Content.ToString())
+            {
+                Content.Text = "test 2";
+            }
+            if (city == "London")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == "NewYork")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == "Oslo")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == "Paris")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == "Rio")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == "Sydney")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            if (city == "Tokyo")
+            {
+                Content.Text = "fzklhfzzf";
+            }
+            else
+            {
+                return "you are trying to break the code ...";
+            }
+            return "";
         }
     }
 }
