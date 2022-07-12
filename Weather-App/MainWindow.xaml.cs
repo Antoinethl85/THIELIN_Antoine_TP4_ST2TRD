@@ -33,45 +33,45 @@ namespace Weather_App
 
         private void DisplayInfos(object sender, RoutedEventArgs e)
         {
-            if (Selection.Text == "Alger")
+            if (Selection.SelectionBoxItem.ToString() == "Alger")
             {
                 Content.Text = showData("Alger");
             }
-            if (Selection.Text == "Berlin")
+            else if (Selection.SelectionBoxItem.ToString() == "Berlin")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "Berlin";
             }
-            if (Selection.SelectedValue.ToString() == Johannesburg.Content.ToString())
+            else if (Selection.SelectionBoxItem.ToString() == "Johannesburg")
             {
-                Content.Text = "test 2";
+                Content.Text = "test Johannesburg";
             }
-            if (Selection.SelectionBoxItem == London)
+            else if (Selection.SelectionBoxItem.ToString() == "London")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "London";
             }
-            if (Selection.SelectionBoxItem == NewYork)
+            else if (Selection.SelectionBoxItem.ToString() == "New York")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "NewYork";
             }
-            if (Selection.SelectionBoxItem == Oslo)
+            else if (Selection.SelectionBoxItem.ToString() == "Oslo")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "Oslo";
             }
-            if (Selection.SelectionBoxItem == Paris)
+            else if (Selection.SelectionBoxItem.ToString() == "Paris")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Paris";
             }
-            if (Selection.SelectionBoxItem == Rio)
+            else if (Rio.IsSelected)
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Rio";
             }
-            if (Selection.SelectionBoxItem == Sydney)
+            else if (Selection.Text == "Sydney")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Sydney";
             }
-            if (Selection.SelectionBoxItem == Tokyo)
+            else if (Selection.SelectionBoxItem.ToString() == "Tokyo")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Tokyo";
             }
             else
             {
@@ -82,11 +82,12 @@ namespace Weather_App
         private string showData(string city)
         {
             Api _api = new Api();
-            if (city == "Alger")
+            if (Selection.SelectedItem.ToString() == "Alger")
             {
-                Alger _alger = new Alger();
+                Content.Text = "test alger";
+                /*Alger _alger = new Alger();
                 Root algerInfos = _api.GetWeather(_alger.getCoordinates());
-                return algerInfos.current.sunrise.ToString();
+                return algerInfos.current.sunrise.ToString();*/
             }
             if (city == "Berlin")
             {
@@ -112,17 +113,17 @@ namespace Weather_App
             {
                 Content.Text = "fzklhfzzf";
             }
-            if (city == "Rio")
+            if (Rio.IsSelected)
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Rio";
             }
-            if (city == "Sydney")
+            if (Selection.Text == "Sydney")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Sydney";
             }
-            if (city == "Tokyo")
+            if (Selection.SelectedItem.ToString() == "Tokyo")
             {
-                Content.Text = "fzklhfzzf";
+                Content.Text = "test Tokyo";
             }
             else
             {
