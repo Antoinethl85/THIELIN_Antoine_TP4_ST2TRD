@@ -1,5 +1,9 @@
 # THIELIN_Antoine_TP4_ST2TRD
 
+##Introduction
+
+I wasn't able to test my code the last day because of internet issues (I changed home and doesn't have internet connection, I discovred 4g for my phone is enough for API calls). So, if Alger doesn't work, try the other cities because i changed nothing compare to the first version (when i had internet) that compiled perfectly. 
+
 ## In  your  point  of  view,  what was complicated  in  the  TP#2?  What  where  your  pain  points? What  could  you  do  when  expanding  this  TP  to avoid these  further?
 
 I was not familiar with how to communicate with an API so it was a little challange for me to make it work. So the main part was the aync task to request data to the API in order to understand what it does. In this TP, I will try to make my code clearer and easiest to read.
