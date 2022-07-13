@@ -30,7 +30,8 @@
         
         <StackPanel Grid.Row="2" Grid.Column="1">
             <ComboBox Name="Selection" Cursor="Hand">
-                <ComboBoxItem Cursor="Hand" IsSelected="True">Alger</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">---</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">Alger</ComboBoxItem>
                 <ComboBoxItem Cursor="Hand">Berlin</ComboBoxItem>
                 <ComboBoxItem Cursor="Hand">Johannesburg</ComboBoxItem>
                 <ComboBoxItem Cursor="Hand">London</ComboBoxItem>
