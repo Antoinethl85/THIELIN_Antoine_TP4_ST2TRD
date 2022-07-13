@@ -1,6 +1,6 @@
 # THIELIN_Antoine_TP4_ST2TRD
 
-##Introduction
+## Introduction
 
 I wasn't able to test my code the last day because of internet issues (I changed home and doesn't have internet connection, I discovred 4g for my phone is enough for API calls). So, if Alger doesn't work, try the other cities because i changed nothing compare to the first version (when i had internet) that compiled perfectly. 
 
