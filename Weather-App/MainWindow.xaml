@@ -13,6 +13,7 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="50" />
 
         </Grid.RowDefinitions>
@@ -29,16 +30,16 @@
         
         <StackPanel Grid.Row="2" Grid.Column="1">
             <ComboBox Name="Selection" Cursor="Hand">
-                <ComboBoxItem Name="AlgerBox" IsSelected="True">Alger</ComboBoxItem>
-                <ComboBoxItem Name="Berlin">Berlin</ComboBoxItem>
-                <ComboBoxItem Name="Johannesburg">Johannesburg</ComboBoxItem>
-                <ComboBoxItem Name="London">London</ComboBoxItem>
-                <ComboBoxItem Name="NewYork">New York</ComboBoxItem>
-                <ComboBoxItem Name="Oslo">Oslo</ComboBoxItem>
-                <ComboBoxItem Name="Paris">Paris</ComboBoxItem>
-                <ComboBoxItem Name="Rio">Rio</ComboBoxItem>
-                <ComboBoxItem Name="Sydney">Sydney</ComboBoxItem>
-                <ComboBoxItem Name="Tokyo">Tokyo</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand" IsSelected="True">Alger</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">Berlin</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">Johannesburg</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">London</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">New York</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">Oslo</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">Paris</ComboBoxItem>
+                <ComboBoxItem Name="Rio" Cursor="Hand">Rio</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand" >Sydney</ComboBoxItem>
+                <ComboBoxItem Cursor="Hand">Tokyo</ComboBoxItem>
             </ComboBox>
         </StackPanel>
         
@@ -47,7 +48,11 @@
         </StackPanel>
         
         <StackPanel Grid.Row="4" Grid.Column="1" Name="Infos">
-            <TextBlock Name="Content"></TextBlock>
+            <TextBlock Name="Content" TextWrapping="Wrap"></TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="5" Grid.Column="1" Name="Temp">
+            <TextBlock Name="Temperature" TextAlignment="Center"></TextBlock>
         </StackPanel>
     </Grid>
 </Window>

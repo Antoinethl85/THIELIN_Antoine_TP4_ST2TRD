@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Weather_App.API;
 using Weather_App.Cities;
+using Newtonsoft.Json;
 
 namespace Weather_App
 {
@@ -22,6 +23,7 @@ namespace Weather_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static string _urlIcon = "http://openweathermap.org/img/w/10d.png";
         public MainWindow()
         {
             InitializeComponent();
@@ -31,105 +33,115 @@ namespace Weather_App
             Infos.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
         }
 
-        private void DisplayInfos(object sender, RoutedEventArgs e)
+        private async void DisplayInfos(object sender, RoutedEventArgs e)
         {
+            Api _api = new Api();
+            functions fct = new functions();
             if (Selection.SelectionBoxItem.ToString() == "Alger")
             {
-                Content.Text = showData("Alger");
+                Alger _alger = new Alger();
+                Coordinates coordinatesAlger = _alger.getCoordinates();
+                Root algerWeather = await _api.GetWeather(coordinatesAlger);
+                Content.Text = $"Current weather in Alger is {algerWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((algerWeather.current.temp - 273),2)} °C but it feels like {Math.Round((algerWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {algerWeather.current.clouds} clouds and sky is {algerWeather.current.weather[0].main}.";
+                Content.Text += $"{_urlIcon}";
+                
+                //Root algerPolution = await _api.GetPolution(coordinatesAlger);
+                //Content.Text = $"{algerPolution.list.main.aqi}";
+
+                double tempAlger = Math.Round((algerWeather.current.temp - 273), 2);
+                //Temperature.Text = $"Temperature in Alger : {tempAlger} °C";
+                //Temperature.Background = fct.backgroundColor(tempAlger);
             }
             else if (Selection.SelectionBoxItem.ToString() == "Berlin")
             {
-                Content.Text = "Berlin";
+                Berlin _berlin = new Berlin();
+                Coordinates coordinatesBerlin = _berlin.getCoordinates();
+                Root berlinWeather = await _api.GetWeather(coordinatesBerlin);
+                Content.Text = $"Current weather in Berlin is {berlinWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((berlinWeather.current.temp - 273),2)} °C but it feels like {Math.Round((berlinWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {berlinWeather.current.clouds} clouds and sky is {berlinWeather.current.weather[0].main}.";
+                
+                //Temperature.Text = $"Temperature in Alger : {Math.Round((berlinWeather.current.temp - 273),2)} °C";
+                //Temp.Background = new SolidColorBrush(Colors.CornflowerBlue);
             }
             else if (Selection.SelectionBoxItem.ToString() == "Johannesburg")
             {
-                Content.Text = "test Johannesburg";
+                Johannesburg _johannesburg = new Johannesburg();
+                Coordinates coordinatesJohannesburg = _johannesburg.getCoordinates();
+                Root johannesburgWeather = await _api.GetWeather(coordinatesJohannesburg);
+                Content.Text = $"Current weather in Johannesburg is {johannesburgWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((johannesburgWeather.current.temp - 273),2)} °C but it feels like {Math.Round((johannesburgWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {johannesburgWeather.current.clouds} clouds and sky is {johannesburgWeather.current.weather[0].main}.";
             }
             else if (Selection.SelectionBoxItem.ToString() == "London")
             {
-                Content.Text = "London";
+                London _london = new London();
+                Coordinates coordinatesLondon = _london.getCoordinates();
+                Root londonWeather = await _api.GetWeather(coordinatesLondon);
+                Content.Text = $"Current weather in London is {londonWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((londonWeather.current.temp - 273),2)} °C but it feels like {Math.Round((londonWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {londonWeather.current.clouds} clouds and sky is {londonWeather.current.weather[0].main}.";
             }
             else if (Selection.SelectionBoxItem.ToString() == "New York")
             {
-                Content.Text = "NewYork";
+                New_York _newYork = new New_York();
+                Coordinates coordinatesNy = _newYork.getCoordinates();
+                Root nyWeather = await _api.GetWeather(coordinatesNy);
+                Content.Text = $"Current weather in New York is {nyWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((nyWeather.current.temp - 273),2)} °C but it feels like {Math.Round((nyWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {nyWeather.current.clouds} clouds and sky is {nyWeather.current.weather[0].main}.";
             }
             else if (Selection.SelectionBoxItem.ToString() == "Oslo")
             {
-                Content.Text = "Oslo";
+                Oslo _oslo = new Oslo();
+                Coordinates coordinatesOslo = _oslo.getCoordinates();
+                Root OsloWeather = await _api.GetWeather(coordinatesOslo);
+                Content.Text = $"Current weather in Oslo is {OsloWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((OsloWeather.current.temp - 273),2)} °C but it feels like {Math.Round((OsloWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {OsloWeather.current.clouds} clouds and sky is {OsloWeather.current.weather[0].main}.";
             }
             else if (Selection.SelectionBoxItem.ToString() == "Paris")
             {
-                Content.Text = "test Paris";
+                Paris _paris = new Paris();
+                Coordinates coordinatesParis = _paris.getCoordinates();
+                Root parisWeather = await _api.GetWeather(coordinatesParis);
+                Content.Text = $"Current weather in Paris is {parisWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((parisWeather.current.temp - 273),2)} °C but it feels like {Math.Round((parisWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {parisWeather.current.clouds} clouds and sky is {parisWeather.current.weather[0].main}.";
             }
             else if (Rio.IsSelected)
             {
-                Content.Text = "test Rio";
+                Rio _rio = new Rio();
+                Coordinates coordinatesRio = _rio.getCoordinates();
+                Root rioWeather = await _api.GetWeather(coordinatesRio);
+                Content.Text = $"Current weather in Rio is {rioWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((rioWeather.current.temp - 273),2)} °C but it feels like {Math.Round((rioWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {rioWeather.current.clouds} clouds and sky is {rioWeather.current.weather[0].main}.";
             }
             else if (Selection.Text == "Sydney")
             {
-                Content.Text = "test Sydney";
+                Sydney _sydney = new Sydney();
+                Coordinates coordinatesSydney = _sydney.getCoordinates();
+                Root sydneyWeather = await _api.GetWeather(coordinatesSydney);
+                Content.Text = $"Current weather in Sydney is {sydneyWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((sydneyWeather.current.temp - 273),2)} °C but it feels like {Math.Round((sydneyWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {sydneyWeather.current.clouds} clouds and sky is {sydneyWeather.current.weather[0].main}.";
             }
             else if (Selection.SelectionBoxItem.ToString() == "Tokyo")
             {
-                Content.Text = "test Tokyo";
+                Tokyo _tokyo = new Tokyo();
+                Coordinates coordinatesTokyo = _tokyo.getCoordinates();
+                Root tokyoWeather = await _api.GetWeather(coordinatesTokyo);
+                Content.Text = $"Current weather in Tokyo is {tokyoWeather.current.weather[0].description}.";
+                Content.Text += $" The temperature is {Math.Round((tokyoWeather.current.temp - 273),2)} °C but it feels like {Math.Round((tokyoWeather.current.feels_like - 273),2)}°C.";
+                Content.Text += $" Currently, there are {tokyoWeather.current.clouds} clouds and sky is {tokyoWeather.current.weather[0].main}.";
             }
             else
             {
                 Content.Text = "You didn't choose a correct city";
             }
-        }
-
-        private string showData(string city)
-        {
-            Api _api = new Api();
-            if (Selection.SelectedItem.ToString() == "Alger")
-            {
-                Content.Text = "test alger";
-                /*Alger _alger = new Alger();
-                Root algerInfos = _api.GetWeather(_alger.getCoordinates());
-                return algerInfos.current.sunrise.ToString();*/
-            }
-            if (city == "Berlin")
-            {
-                Content.Text = "fzklhfzzf";
-            }
-            if (city == Johannesburg.Content.ToString())
-            {
-                Content.Text = "test 2";
-            }
-            if (city == "London")
-            {
-                Content.Text = "fzklhfzzf";
-            }
-            if (city == "NewYork")
-            {
-                Content.Text = "fzklhfzzf";
-            }
-            if (city == "Oslo")
-            {
-                Content.Text = "fzklhfzzf";
-            }
-            if (city == "Paris")
-            {
-                Content.Text = "fzklhfzzf";
-            }
-            if (Rio.IsSelected)
-            {
-                Content.Text = "test Rio";
-            }
-            if (Selection.Text == "Sydney")
-            {
-                Content.Text = "test Sydney";
-            }
-            if (Selection.SelectedItem.ToString() == "Tokyo")
-            {
-                Content.Text = "test Tokyo";
-            }
-            else
-            {
-                return "you are trying to break the code ...";
-            }
-            return "";
         }
     }
 }
