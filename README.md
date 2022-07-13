@@ -6,6 +6,12 @@ I was not familiar with how to communicate with an API so it was a little challa
 
 ## What are the S.O.L.I.D. principles?  What are the “KISS rule” and the “boy scout rule”?  What’s clean  code,  clean  architecture? 
 
+SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable : Single-responsibility, Open–closed, Liskov substitution, Interface segregation, Dependency inversion.
 
+KISS rule is a constant reminder to emphasize the simplest way forward. You adhere to KISS when you avoid attaching unnecessary steps to a process that doesn't need them.
+
+The Boy Scout Rule can be summarized as: Leave your code better than you found it.
 
 ## How  would  you  expand  this  code? What can you add  to the software you build  to make it more useful, reliable, relevant to the user?  Find  5 ways to improve your previous  TP, even  if that’s not doable. 
+
+If i can update this code, i would make a single window for each city and enable the user to type the city he wants (or enter coordinates). I also want to add icons for each infos on the city (wind, temperature, cloud, rain ...). I would like to enbale user to compare the city choosen with other ones in order for him to compare. And, I think the last thing I would implement is a text file as output of the user's research (for example, he receives a txt file of Paris's weather if he selected this city).
