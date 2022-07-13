@@ -51,8 +51,8 @@ namespace Weather_App
                 //Content.Text = $"{algerPolution.list.main.aqi}";
 
                 double tempAlger = Math.Round((algerWeather.current.temp - 273), 2);
-                //Temperature.Text = $"Temperature in Alger : {tempAlger} °C";
-                //Temperature.Background = fct.backgroundColor(tempAlger);
+                Temperature.Text = $"Temperature in Alger : {tempAlger} °C";
+                Temperature.Background = fct.backgroundColor(tempAlger);
             }
             else if (Selection.SelectionBoxItem.ToString() == "Berlin")
             {
